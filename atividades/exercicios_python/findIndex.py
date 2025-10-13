@@ -7,7 +7,7 @@
 '''
 
 def findIndex(s, k):
-    tuples = []
+    tuples = [] 
 
     for i in range(len(s)):
         for j in range(len(k)):

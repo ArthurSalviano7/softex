@@ -116,7 +116,7 @@ if palavra in nome:
     print(f"String {palavra} está dentro de nome {nome}")
 else:
     print(f"String {palavra} não está dentro de {nome}")
-'''
+
 #27
 vogais = ['a', 'e', 'i', 'o', 'u']
 print("Vogais: ")
@@ -141,11 +141,21 @@ if count_letra > 1:
     print(f"Existem {count_letra} letras '{letra}' no nome {nome}")
 else:
     print(f"São 1 ou menos letras {letra} no nome {nome}")
+'''
 
 #30 - Palíndromo
+nome = "arara"
 # Ex: arara [a, r, a, r, a]
 # comparar nome[0] com nome[-1], [1] == [-2] etc..
 if len(nome) %2 == 0: # Não é palíndromo se quantidade de letras é par
-    print("Não é palíndromo") 
+    index_meio = len(nome)/2
+    metade_inicio = nome[:index_meio]
+    metade_fim = nome[index_meio:]
+    print(metade_inicio)
+    print(metade_fim)
 else:
-    index_meio = len(nome) // 2 #  Ex: letra "a" no meio de arara
+    index_meio = len(nome) // 2 + 1 #Ex: letra "a" no meio de arara
+    metade_inicio = nome[:index_meio]
+    metade_fim = nome[index_meio:]
+    print(metade_inicio)
+    print(metade_fim)
