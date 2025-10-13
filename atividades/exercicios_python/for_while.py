@@ -37,7 +37,7 @@ while i <= 15:
     print(i)
     i += 1
 #7
-numeros = [1, 5, 9, 25, 6, 50, 3, 2, 4]
+numeros = [1, 5, 9, 25, 6, 50, 3, 2, 5]
 for num in numeros:
     print(num)
     if num == 50:
