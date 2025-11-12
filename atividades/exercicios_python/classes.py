@@ -202,9 +202,12 @@ class Conta:
         self.saldo += valor
         print("Saldo atual: R$", self.saldo)
     
-    def sacar(self, valor):
-        self.saldo -= valor
-        print("Saque de R$", valor, "efetuado!")
+    def sacar(self, valor)
+        if self.saldo > valor:
+            self.saldo -= valor
+            print("Saque de R$", valor, "efetuado!")
+        else:
+            print("Saldo insuficiente!")
         print("Saldo atual: R$", self.saldo)
     
     def mostrarConta(self):
@@ -262,5 +265,111 @@ class Retangulo:
 
 retangulo = Retangulo(10, 20)
 retangulo.mostrarRetangulo()
-'''
+
 #21
+class Aluno:
+    def __init__(self, nome, nota1=0, nota2=0):
+        self.nome = nome
+        self.nota1 = nota1
+        self.nota2 = nota2
+        self.media = (nota1 + nota2)/2
+    
+    def mostrarAluno(self):
+        print(self.nome, "-", self.media)
+
+aluno = Aluno("Arthur", 7, 8)
+aluno.mostrarAluno()
+
+#22
+class Produto:
+    def __init__(self, nome, preco):
+        self.nome = nome
+        self.preco = preco
+    
+    def desconto(self, porcentagem):
+        self.preco = self.preco - (self.preco * (porcentagem/100))
+        print("Novo preço: R$", self.preco)
+
+p1 = Produto("Biscoito", 5.50)
+p1.desconto(10)
+
+#23
+class Pessoa:
+    def __init__(self, nome, idade):
+        self.nome = nome
+        self.idade = idade
+        
+    def maior_de_idade(self):
+        return self.idade > 18
+    
+pessoa = Pessoa("João", 19)
+
+print(f"{pessoa.nome} é de maior") if pessoa.maior_de_idade else print("{pessoa.nome} é de menor")
+
+#24
+class Banco:
+    def __init__(self, clientes):
+        self.clientes = clientes
+    
+    def mostrarClientes(self):
+        print("Clientes do banco: ")
+        for cliente in self.clientes:
+            print(cliente)
+            
+banco = Banco(["João", "Maria", "Lucio"])
+banco.mostrarClientes()
+
+#25
+class Motor:
+    def __init__(self):
+        self.ligado = False
+    
+    def ligar_motor(self):
+        self.ligado = True
+        
+motor = Motor()
+print("O motor está ligado") if motor.ligado else print("O motor está desligado")
+motor.ligar_motor()
+print("O motor está ligado") if motor.ligado else print("O motor está desligado")
+
+#26
+class Casa:
+    def __init__(self, cor, tamanho):
+        self.cor = cor
+        self.tamanho = tamanho
+    
+    def mostrarCasa(self):
+        print(f"A casa é da cor {self.cor} e possui {self.tamanho} metros quadrados.")
+        
+casa1 = Casa("Amarela", 80.5)
+casa1.mostrarCasa()
+
+#27
+class Pessoa:
+    def __init__(self):
+        print("Pessoa foi criada!")
+
+p1 = Pessoa()
+p2 = Pessoa()
+'''
+
+#28
+class Carro:
+    def __init__(self, estado):
+        self.estado = estado
+    
+    def mostrarEstado(self):
+        print(f"O estado atual do carro é {self.estado}")
+
+c1 = Carro("Seminovo")
+c2 = Carro("Novo")
+
+#29
+class Computador:
+    def __init__(self):
+        self.ligado = False
+    
+    def ligar(self):
+        self.ligado = True
+    
+    
