@@ -92,15 +92,15 @@ class Carrinho:
     
     def adicionar_item(self, produto):
         self.lista_itens.append(produto)
-        print("Produto adicionado ao carrinho!")
+        print(f"\n{produto.nome} adicionado ao carrinho!")
     
     def remover_item(self, nome):
         for produto in self.lista_itens:
             if produto.nome == nome:
                 self.lista_itens.remove(produto)
-                return "Produto removido com sucesso"
+                return f"Produto {produto.nome} removido com sucesso"
         
-        return "Produto não encontrado"
+        return f"{produto.nome} não encontrado"
     
     def calcular_total(self):
         total = 0
@@ -114,5 +114,41 @@ carrinho = Carrinho()
 carrinho.adicionar_item(produto1)
 carrinho.adicionar_item(produto2)
 carrinho.calcular_total()
-print(carrinho.remover_item(produto1))
+print(carrinho.remover_item(produto1.nome)) #Remover por nome
 carrinho.calcular_total()
+
+class Contato:
+    def __init__(self, nome, numero):
+        self.nome = nome
+        self.numero = numero
+
+class Agenda:
+    def __init__(self):
+        self.lista_telefonica = []
+    
+    def adicionar(self, contato):
+        self.lista_telefonica.append(contato)
+        print("Contato adicionado!")
+    
+    def buscar(self, nome):
+        for contato in self.lista_telefonica:
+            if contato.nome == nome:
+                return contato.numero
+
+        return "Contato não encontrado"
+
+    def listar_todos(self):
+        print("\nLista Telefônica:")
+        for contato in self.lista_telefonica:
+            print(f"{contato.nome}  -->  {contato.numero}")
+
+contato1 = Contato("Arthur", "83987451235")
+contato2 = Contato("Lucio", "83988452465")
+
+agenda = Agenda()
+agenda.adicionar(contato1)
+agenda.adicionar(contato2)
+
+agenda.listar_todos()
+
+print(agenda.buscar("Arthur"))
