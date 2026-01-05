@@ -1,4 +1,3 @@
-'''
 #1
 class Produto:
     def __init__(self, nome, preco, quantidade):
@@ -15,10 +14,11 @@ produto1 = Produto("Arroz Parbolizado", 2.89, 213)
 produto2 = Produto("Feijão", 5.49, 75)
 produto3 = Produto("Cream Cracker", 4.50, 100)
 
-produto1.valor_total_estoque()
-produto2.valor_total_estoque()
-produto3.valor_total_estoque()
+#produto1.valor_total_estoque()
+#produto2.valor_total_estoque()
+#produto3.valor_total_estoque()
 
+'''
 #2
 class ContaBancaria:
     def __init__(self, nome, saldo=0):
@@ -85,6 +85,7 @@ vendedor1.mostrar_salario()
 
 gerente = Gerente("Miguel", 6550.0)
 gerente.mostrar_salario()
+'''
 
 #4
 class Carrinho:
@@ -110,6 +111,9 @@ class Carrinho:
         
         print("Total: R$", total)
         return total
+
+produto1 = Produto("Arroz Parbolizado", 2.89, 213)
+produto2 = Produto("Feijão", 5.49, 75)
     
 carrinho = Carrinho()
 carrinho.adicionar_item(produto1)
@@ -118,6 +122,7 @@ carrinho.calcular_total()
 print(carrinho.remover_item(produto1.nome)) #Remover por nome
 carrinho.calcular_total()
 
+#5
 class Contato:
     def __init__(self, nome, numero):
         self.nome = nome
@@ -134,7 +139,7 @@ class Agenda:
     def buscar(self, nome):
         for contato in self.lista_telefonica:
             if contato.nome == nome:
-                return contato.numero
+                return f"\nContato encontrado: {contato.nome} ---> {contato.numero}"
 
         return "Contato não encontrado"
 
@@ -143,6 +148,7 @@ class Agenda:
         for contato in self.lista_telefonica:
             print(f"{contato.nome}  -->  {contato.numero}")
 
+print()
 contato1 = Contato("Arthur", "83987451235")
 contato2 = Contato("Lucio", "83988452465")
 
@@ -155,7 +161,6 @@ agenda.listar_todos()
 print(agenda.buscar("Arthur"))
 
 '''
-
 #6
 class Usuario:
     def __init__(self, usuario, senha):
@@ -292,3 +297,9 @@ meu_carro.acelerar()
 meu_carro.acelerar()
 meu_carro.frear()
 meu_carro.desligar()
+
+Consultas SQL:
+SELECT * FROM produtos ORDER BY `preço` ASC;
+
+SELECT * FROM produtos WHERE estoque < 10;
+'''
